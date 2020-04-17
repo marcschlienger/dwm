@@ -673,6 +673,7 @@ configure(Client *c)
 void
 configurenotify(XEvent *e)
 {
+	Client *c;
 	Monitor *m;
 	XConfigureEvent *ev = &e->xconfigure;
 	int dirty;
@@ -1249,6 +1250,7 @@ manage(Window w, XWindowAttributes *wa)
 	if(c->iscentered) {
 		c->x = (c->mon->mw - WIDTH(c)) / 2;
 		c->y = (c->mon->mh - HEIGHT(c)) / 2;
+  }
 
 	selmon->tagset[selmon->seltags] &= ~scratchtag;
 	if (!strcmp(c->name, scratchpadname)) {
