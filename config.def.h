@@ -116,18 +116,20 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-  { MODKEY|ShiftMask,             XK_i,      shiftview,      { .i = +1 } },
+    { MODKEY|ShiftMask,             XK_i,      shiftview,      { .i = +1 } },
 	{ MODKEY|ShiftMask,             XK_u,      shiftview,      { .i = -1 } },
 	{ 0,                            XF86XK_AudioMute,		       spawn,		 SHCMD("amixer set Master toggle; dwm-status-bar") },
 	{ 0,                            XF86XK_AudioRaiseVolume,	 spawn,     SHCMD("amixer set Master 5%+; dwm-status-bar") },
 	{ 0,                            XF86XK_AudioLowerVolume,	 spawn,     SHCMD("amixer set Master 5%-; dwm-status-bar") },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = exitcmd } },
-  { 0,                            XF86XK_MonBrightnessUp,	  spawn,		 SHCMD("xbacklight -inc 5 ; ~/bin/dwm-status-bar") },
+    { 0,                            XF86XK_MonBrightnessUp,	  spawn,		 SHCMD("xbacklight -inc 5 ; ~/bin/dwm-status-bar") },
 	{ 0,                            XF86XK_MonBrightnessDown,	spawn,		 SHCMD("xbacklight -dec 5 ; ~/bin/dwm-status-bar") },
-	{ MODKEY,			                  XK_c,		   spawn,		       SHCMD("st -e cmus") },
-  { MODKEY,			                  XK_n,		   spawn,		       SHCMD("st -e vifm") },
-	{ MODKEY|ShiftMask,		          XK_n,		   spawn,		       SHCMD("st -e newsboat") },
-  { MODKEY,			                  XK_w,		   spawn,		       SHCMD("firefox") },
+	{ MODKEY,			            XK_c,		   spawn,		       SHCMD("st -e cmus") },
+    { MODKEY,			            XK_n,		   spawn,		       SHCMD("st -e vifm") },
+	{ MODKEY|ShiftMask,		        XK_n,		   spawn,		       SHCMD("st -e newsboat") },
+    { MODKEY,			                XK_w,		   spawn,		       SHCMD("firefox") },
+	{ 0,				            XK_Print,	spawn,		SHCMD("scrot -u -z '%Y-%m-%d_%H:%M:%S_$wx$h$n.png' -e 'mv $f ~/media/pictures/screenshots' && notify-send -i gnome-screenshot 'Saved window view screenshot'") },
+	{ ShiftMask,			        XK_Print,	spawn,		SHCMD("scrot -m -z '%Y-%m-%d_%H:%M:%S_$wx$h.png' -e 'mv $f ~/media/picures/screenshots' && notify-send -i gnome-screenshot 'Saved screen view screenshot'") },
 };
 
 /* button definitions */
